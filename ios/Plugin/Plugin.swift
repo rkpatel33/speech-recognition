@@ -80,6 +80,17 @@ public class SpeechRecognition: CAPPlugin {
             self.recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
             self.recognitionRequest?.shouldReportPartialResults = partialResults
 
+            // Optimize for dictation (natural speech)
+            self.recognitionRequest?.taskHint = .dictation
+
+            // Help recognize common names
+            self.recognitionRequest?.contextualStrings = ["Hilary", "Nomi", "Amisha", "Rishi"]
+
+            // Enable automatic punctuation (iOS 16+)
+            if #available(iOS 16.0, *) {
+                self.recognitionRequest?.addsPunctuation = true
+            }
+
             let inputNode: AVAudioInputNode = self.audioEngine!.inputNode
             let format: AVAudioFormat = inputNode.outputFormat(forBus: 0)
 

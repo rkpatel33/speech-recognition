@@ -1,42 +1,31 @@
 import { WebPlugin } from "@capacitor/core";
-import {
-  PermissionStatus,
-  SpeechRecognitionPlugin,
-  UtteranceOptions,
-} from "./definitions";
-
-export class SpeechRecognitionWeb
-  extends WebPlugin
-  implements
-    Omit<SpeechRecognitionPlugin, "addListener" | "removeAllListeners">
-{
+export class SpeechRecognitionWeb extends WebPlugin {
   // @ts-ignore - inherited from WebPlugin
-  available(): Promise<{ available: boolean }> {
+  available() {
     throw this.unimplemented("Method not implemented on web.");
   }
-  start(_options?: UtteranceOptions): Promise<{ matches?: string[] }> {
+  start(_options) {
     throw this.unimplemented("Method not implemented on web.");
   }
-  stop(): Promise<void> {
+  stop() {
     throw this.unimplemented("Method not implemented on web.");
   }
-  getSupportedLanguages(): Promise<{ languages: any[] }> {
+  getSupportedLanguages() {
     throw this.unimplemented("Method not implemented on web.");
   }
-  hasPermission(): Promise<{ permission: boolean }> {
+  hasPermission() {
     throw this.unimplemented("Method not implemented on web.");
   }
-  requestPermission(): Promise<void> {
+  requestPermission() {
     throw this.unimplemented("Method not implemented on web.");
   }
-  checkPermissions(): Promise<PermissionStatus> {
+  checkPermissions() {
     throw this.unimplemented("Method not implemented on web.");
   }
-  requestPermissions(): Promise<PermissionStatus> {
+  requestPermissions() {
     throw this.unimplemented("Method not implemented on web.");
   }
 }
-
 const SpeechRecognition = new SpeechRecognitionWeb();
-
 export { SpeechRecognition };
+//# sourceMappingURL=web.js.map

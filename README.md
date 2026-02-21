@@ -54,7 +54,7 @@ No further action required.
 - [`requestPermission()`](#requestpermission)
 - [`checkPermissions()`](#checkpermissions)
 - [`requestPermissions()`](#requestpermissions)
-- [`addListener('partialResults', ...)`](#addlistenerpartialresults)
+- [`addListener('partialResults', ...)`](#addlistenerpartialresults-)
 - [`removeAllListeners()`](#removealllisteners)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
